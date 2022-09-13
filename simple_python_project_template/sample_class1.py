@@ -12,7 +12,7 @@ class Sample1(object):
     CLASS_CONSTANT = "Hello World!"
 
 
-    def __init__(self, verbose:bool=False):
+    def __init__(self, verbose:bool=False) -> None:
         """
         Class constructor.
             - Args:
@@ -26,7 +26,7 @@ class Sample1(object):
         logging.config.fileConfig("logging.conf")
         logging.getLogger().setLevel(logging.DEBUG if os.environ.get("DEBUG") or verbose else logging.INFO)
     
-    def _get_formatted_date(self, ts_format:str="%Y/%m/%d @ %H:%M:%S"):
+    def _get_formatted_date(self, ts_format:str="%Y/%m/%d @ %H:%M:%S") -> str:
         """
         Sample internal/private helper method to get a formatted datetime string.
             - Args:
@@ -39,7 +39,7 @@ class Sample1(object):
         now = datetime.datetime.now()
         return now.strftime(ts_format)
 
-    def hello_world(self, ts_format:str="%Y/%m/%d @ %H:%M:%S"):
+    def hello_world(self, ts_format:str="%Y/%m/%d @ %H:%M:%S") -> str:
         """
         Returns 'Hello World' with datetime.
             - Args:
